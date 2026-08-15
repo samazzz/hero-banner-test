@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
@@ -16,7 +17,10 @@ export default function Header() {
   return (
     <header className="relative z-50 bg-white">
       <div className="relative mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-5 py-5 md:px-8 lg:px-12">
-        <a href="/" className="relative z-10 flex shrink-0 items-center gap-2.5">
+        <Link
+          href="/"
+          className="relative z-10 flex shrink-0 items-center gap-2.5"
+        >
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-immbark text-white">
             <svg
               viewBox="0 0 24 24"
@@ -54,7 +58,7 @@ export default function Header() {
           <span className="font-sans text-[1.35rem] font-bold tracking-tight text-immbark">
             Immbark
           </span>
-        </a>
+        </Link>
 
         <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-7 lg:flex xl:gap-9">
           {navLinks.map((link) => (
