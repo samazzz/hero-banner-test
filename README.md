@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Immbark — Hero Banner Test
+
+A Next.js project built as a test task to recreate and improve upon the **Immbark** immigration platform's landing page design — featuring a top navigation bar and a creative auto-playing hero banner slider.
+
+---
+
+## Overview
+
+The goal of this task was to:
+
+- Build a **top navigation bar** matching the Immbark brand (logo, centered nav links, Login button, search icon, mobile hamburger menu)
+- Build a **creative hero banner** inspired by the reference design with the same forest-green color palette, serif headline typography, and original copy
+- Replace the static hero with an **animated 3-slide carousel** featuring wipe transitions, ken-burns photo effect, staggered text animations, and progress indicators
+
+---
+
+## Tech Stack
+
+| Tool | Version |
+|---|---|
+| [Next.js](https://nextjs.org) | 16.3 |
+| React | 19 |
+| TypeScript | 5 |
+| Tailwind CSS | 4 |
+| Fonts | [Fraunces](https://fonts.google.com/specimen/Fraunces) (serif) + [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) (sans-serif) |
+
+---
+
+## Features
+
+### Navigation
+- Responsive header with centered desktop nav links
+- Pill-shaped Login button + circular search icon
+- Mobile hamburger menu with slide-down drawer
+
+### Hero Slider
+- **3 slides** with unique headlines, body copy, and photography
+- **Auto-advances** every 6 seconds; pauses on hover
+- **Wipe + fade transition** between slides
+- **Ken-Burns** zoom effect on the active photo
+- **Staggered text animation** on slide entry
+- **Progress bars** — desktop vertical rail on right, mobile dot-bars at bottom
+- Prev / Next arrow controls
+- **Touch swipe** support on mobile
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+src/
+├── app/
+│   ├── globals.css       # Tailwind + custom animations
+│   ├── layout.tsx        # Root layout, Google Fonts setup
+│   └── page.tsx          # Home page
+└── components/
+    ├── Header.tsx         # Top navigation bar
+    └── HeroBanner.tsx     # 3-slide hero carousel
+public/
+├── hero-1.jpg            # Slide 1 photo
+├── hero-2.jpg            # Slide 2 photo
+└── hero-3.jpg            # Slide 3 photo
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Color Palette
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Token | Hex | Usage |
+|---|---|---|
+| `immbark` | `#1a4338` | Primary brand green |
+| `immbark-deep` | `#14352c` | Hover / shadow |
+| `immbark-soft` | `#2a5c4d` | Gradient accent |
+| White | `#ffffff` | Text, buttons |
+| `immbark-nav` | `#4b5563` | Nav link text |
+| `immbark-search` | `#eef0f2` | Icon button backgrounds |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```
